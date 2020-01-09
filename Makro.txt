@@ -1,0 +1,86 @@
+Sub green_lista_1()
+
+    Dim line As String
+    Dim nazwa As Range
+    Dim myData As Workbook
+    Dim foundRng As Range
+
+    Application.CutCopyMode = False
+    Set nazwa = ActiveCell.Offset(0, -1)
+    ActiveCell.Range("J1") = "tak"
+    ActiveCell.Range("A1:H1").Offset(0, -1).Select
+    Selection.Interior.Color = vbGreen
+    Selection.Copy
+    
+    Set myData = Workbooks.Open(ActiveWorkbook.Path & "\Lista_1.xlsx")
+        
+    Set findRange = Range("B4:B100")
+    Set foundRng = findRange.Find(what:=nazwa, LookIn:=xlFormulas, _
+        lookat:=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, _
+        MatchCase:=False, SearchFormat:=False)
+   
+    If foundRng Is Nothing Then
+        MsgBox ("W pliku docelowym nie ma takiej nazy miejscowoœci")
+        
+    ElseIf IsEmpty(foundRng.Value) = True Then
+       
+       MsgBox ("ID miejscowoœci jest puste")
+    Else
+    
+    foundRng.Range("A1:H1").Select
+    Selection.PasteSpecial Paste:=xlPasteAll
+    ActiveCell.Range("E1").Select
+    Selection = "Patrycja"
+    
+End If
+    
+    myData.Save
+    On Error Resume Next
+    myData.Close
+
+ 
+End Sub
+
+
+Sub yellow_lista_1()
+
+    Dim line As String
+    Dim nazwa As Range
+    Dim myData As Workbook
+    Dim foundRng As Range
+
+    Application.CutCopyMode = False
+    Set nazwa = ActiveCell.Offset(0, -1)
+    ActiveCell.Range("A1:H1").Offset(0, -1).Select
+    Selection.Interior.Color = vbYellow
+    Selection.Copy
+    
+    Set myData = Workbooks.Open(ActiveWorkbook.Path & "\Lista_1.xlsx")
+        
+    Set findRange = Range("B4:B100")
+    Set foundRng = findRange.Find(what:=nazwa, LookIn:=xlFormulas, _
+        lookat:=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, _
+        MatchCase:=False, SearchFormat:=False)
+   
+    If foundRng Is Nothing Then
+    
+        MsgBox ("W pliku docelowym nie ma takiej nazy miejscowoœci")
+        
+       ElseIf IsEmpty(foundRng.Value) = True Then
+       
+       MsgBox ("ID miejscowoœci jest puste")
+       
+    Else
+    
+    foundRng.Range("A1:H1").Select
+    Selection.PasteSpecial Paste:=xlPasteAll
+    ActiveCell.Range("E1").Select
+    Selection = "Patrycja"
+    
+End If
+    
+    myData.Save
+    On Error Resume Next
+    myData.Close
+    
+End Sub

@@ -1,0 +1,5 @@
+Aby poprawnie uruchomiæ makro nale¿y:
+1. Uruchomiæ makro w arkuszu - zaznaczyæ "W³¹cz zawartoœæ" w okienku/barze na górze arkuksza.
+2. Zaznaczyæ komórkê z nazw¹ interesuj¹cej nas miejscowoœci.
+3. Nacisn¹æ jeden z trzech przycisków który znajduje siê w zakresie listy 1 lub listy2.
+4. Zmiany zosta³y automatycznie zapisane w pliku "Lista_1" lub "Lista_2"

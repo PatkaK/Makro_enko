@@ -1,0 +1,5 @@
+To properly start macro you should:
+1. Enable macros in a file (Click "OK" or "Accept" in a popped-up bar).
+2. Select the cell with name of place that intrest you.
+3. Press on one of the buttons that are in range of "Lista_1" or "Lista_2".
+4. The changes will be automatically saved in file "Lista_1" or "Lista_2".
